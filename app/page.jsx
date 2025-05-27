@@ -69,7 +69,7 @@ export default function CarbonTracker() {
       <div className="min-h-screen bg-gradient-to-br from-green-50 to-blue-50 flex items-center justify-center">
         <div className="text-center">
           <div className="animate-spin rounded-full h-16 w-16 border-b-2 border-green-600 mx-auto mb-4"></div>
-          <p className="text-gray-600">Loading EcoTrack...</p>
+          <p className="text-gray-600">Loading EcoPulse...</p>
         </div>
       </div>
     )
@@ -85,7 +85,7 @@ export default function CarbonTracker() {
                 <div className="mx-auto w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-4">
                   <Leaf className="h-8 w-8 text-green-600" />
                 </div>
-                <CardTitle className="text-2xl font-bold text-gray-900">Welcome to EcoTrack</CardTitle>
+                <CardTitle className="text-2xl font-bold text-gray-900">Welcome to EcoPulse</CardTitle>
                 <CardDescription className="text-gray-600">
                   Your personal carbon footprint tracker and sustainability companion
                 </CardDescription>
@@ -126,7 +126,7 @@ export default function CarbonTracker() {
                       <Leaf className="h-4 w-4 sm:h-6 sm:w-6 text-green-600" />
                     </div>
                     <div>
-                      <h1 className="text-lg sm:text-xl font-bold text-gray-900">EcoTrack</h1>
+                      <h1 className="text-lg sm:text-xl font-bold text-gray-900">EcoPulse</h1>
                       <p className="text-xs sm:text-sm text-gray-500 hidden sm:block">Carbon Footprint Tracker</p>
                     </div>
                   </div>

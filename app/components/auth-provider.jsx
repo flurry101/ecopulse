@@ -51,7 +51,7 @@ export default function AuthProvider({ children }) {
     const demoUser = {
       id: "demo-user-123",
       name: "Demo User",
-      email: "demo@ecotrack.app",
+      email: "demo@ecopulse.app",
       picture: null,
       totalEmissions: 8.5,
       streak: 12,
@@ -85,7 +85,7 @@ export default function AuthProvider({ children }) {
         const demoUser = {
           id: "demo-user-123",
           name: "Demo User",
-          email: "demo@ecotrack.app",
+          email: "demo@ecopulse.app",
           picture: null,
           totalEmissions: 8.5,
           streak: 12,

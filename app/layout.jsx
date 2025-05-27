@@ -4,7 +4,7 @@ import "./globals.css"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata = {
-  title: "EcoTrack - Carbon Footprint Tracker",
+  title: "EcoPulse - Carbon Footprint Tracker",
   description:
     "A responsive web application for tracking personal carbon emissions and promoting sustainable lifestyle choices",
     generator: 'v0.dev'

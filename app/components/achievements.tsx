@@ -88,7 +88,7 @@ export default function Achievements({ user }: { user: User }) {
     {
       id: "influencer",
       name: "Eco Influencer",
-      description: "Invite 5 friends to join EcoTrack",
+      description: "Invite 5 friends to join EcoPulse",
       icon: "👥",
       category: "Community",
       progress: 20,
