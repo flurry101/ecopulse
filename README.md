@@ -57,37 +57,37 @@ A comprehensive, responsive web application for tracking personal carbon emissio
 ### Installation
 
 1. **Clone the repository**
-   \`\`\`bash
+   ```bash
    git clone https://github.com/yourusername/ecotrack.git
    cd ecotrack
-   \`\`\`
+   ```
 
 2. **Install dependencies**
-   \`\`\`bash
+   ```bash
    npm install
    # or
    yarn install
-   \`\`\`
+   ```
 
 3. **Environment Setup (Optional)**
-   \`\`\`bash
+   ```bash
    cp .env.local.example .env.local
    # Edit .env.local with your Auth0 credentials (optional)
-   \`\`\`
+   ```
 
 4. **Run the development server**
-   \`\`\`bash
+   ```bash
    npm run dev
    # or
    yarn dev
-   \`\`\`
+   ```
 
 5. **Open your browser**
    Navigate to [http://localhost:3000](http://localhost:3000)
 
 ## 📁 Project Structure
 
-\`\`\`
+```
 ecotrack/
 ├── app/                          # Next.js App Router
 │   ├── api/                      # API routes (JavaScript)
@@ -117,7 +117,7 @@ ecotrack/
 ├── next.config.js              # Next.js configuration
 ├── package.json                # Dependencies and scripts
 └── README.md
-\`\`\`
+```
 
 ## 🔧 API Endpoints
 
@@ -149,11 +149,11 @@ The application supports Auth0 authentication for production use:
    - Configure allowed callback URLs and logout URLs
 
 2. **Environment Variables**
-   \`\`\`bash
+   ```bash
    NEXT_PUBLIC_AUTH0_DOMAIN=your-domain.auth0.com
    NEXT_PUBLIC_AUTH0_CLIENT_ID=your-client-id
    AUTH0_CLIENT_SECRET=your-client-secret
-   \`\`\`
+   ```
 
 3. **Demo Mode Fallback**
    - App works without Auth0 configuration
@@ -214,16 +214,15 @@ Key responsive features:
 ### Vercel Deployment
 
 1. **Connect to Vercel**
-   \`\`\`bash
+   ```bash
    npm install -g vercel
    vercel login
-   \`\`\`
+   ```
 
 2. **Deploy to Vercel**
-   \`\`\`bash
-   vercel
-   # Follow the prompts to deploy
-   \`\`\`
+   ```bash
+   vercel -- prod
+   ```
 
 3. **Environment Variables**
    - Add environment variables in Vercel dashboard
@@ -236,18 +235,18 @@ Key responsive features:
 ### Manual Deployment
 
 1. **Build the application**
-   \`\`\`bash
+   ```bash
    npm run build
-   \`\`\`
+   ```
 
 2. **Start production server**
-   \`\`\`bash
+   ```bash
    npm start
-   \`\`\`
+   ```
 
 ### Environment Variables
 
-\`\`\`bash
+```bash
 # Required for Auth0 (Optional)
 NEXT_PUBLIC_AUTH0_DOMAIN=your-domain.auth0.com
 NEXT_PUBLIC_AUTH0_CLIENT_ID=your-client-id
@@ -256,7 +255,7 @@ AUTH0_CLIENT_SECRET=your-client-secret
 # API Configuration
 NEXT_PUBLIC_API_URL=https://your-domain.vercel.app/api
 API_BASE_URL=https://your-domain.vercel.app
-\`\`\`
+```
 
 ## 🔮 Future Enhancements
 
@@ -287,10 +286,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - Icons from Lucide React
 - Inspiration from leading sustainability apps
 
-## 📞 Support
-
-For support, email support@ecotrack.app or create an issue on GitHub.
-
 ---
 
-**Built with ❤️ for a sustainable future using React, Next.js, and JavaScript**
+**Built with 💚 for a sustainable future**
