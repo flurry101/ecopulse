@@ -1,4 +1,4 @@
-# EcoTrack - Carbon Footprint Tracker
+# ecopulse - Carbon Footprint Tracker
 
 A comprehensive, responsive web application for tracking personal carbon emissions and promoting sustainable lifestyle choices through gamification, education, and data-driven insights.
 
@@ -58,8 +58,8 @@ A comprehensive, responsive web application for tracking personal carbon emissio
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/ecotrack.git
-   cd ecotrack
+   git clone https://github.com/yourusername/ecopulse.git
+   cd ecopulse
    ```
 
 2. **Install dependencies**
@@ -88,7 +88,7 @@ A comprehensive, responsive web application for tracking personal carbon emissio
 ## 📁 Project Structure
 
 ```
-ecotrack/
+ecopulse/
 ├── app/                          # Next.js App Router
 │   ├── api/                      # API routes (JavaScript)
 │   │   ├── carbon/              # Carbon calculation endpoints
