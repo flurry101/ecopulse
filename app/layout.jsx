@@ -7,7 +7,19 @@ export const metadata = {
   title: "EcoPulse - Carbon Footprint Tracker",
   description:
     "A responsive web application for tracking personal carbon emissions and promoting sustainable lifestyle choices",
-    generator: 'v0.dev'
+  generator: 'Next.js',
+  applicationName: "EcoPulse",
+  keywords: [
+    "carbon footprint",
+    "sustainability",
+    "eco-friendly",
+    "environment",
+    "green living",
+    "carbon emissions",
+    "climate change",
+    "personal tracker",
+    "lifestyle choices",
+  ]
 }
 
 export default function RootLayout({ children }) {
