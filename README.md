@@ -1,4 +1,4 @@
-# ecopulse - Carbon Footprint Tracker
+# Ecopulse - Carbon Footprint Tracker
 
 A comprehensive, responsive web application for tracking personal carbon emissions and promoting sustainable lifestyle choices through gamification, education, and data-driven insights.
 
@@ -23,14 +23,14 @@ A comprehensive, responsive web application for tracking personal carbon emissio
 
 ### Frontend
 - **React 18** - Modern React with hooks and functional components
-- **Next.js 14** - Full-stack React framework with App Router
 - **JavaScript (ES6+)** - Modern JavaScript without TypeScript
 - **Tailwind CSS** - Utility-first CSS framework for responsive design
 - **Shadcn/UI** - High-quality, accessible UI components
 - **Lucide React** - Beautiful, customizable icons
+- **Next.js 14** - Full-stack React framework with App Router
 
 ### Backend
-- **Next.js API Routes** - Serverless API endpoints
+- **API Routes** - Serverless API endpoints
 - **JavaScript (ES6+)** - Modern JavaScript backend development
 - **RESTful APIs** - Standard HTTP methods for data operations
 
@@ -195,19 +195,6 @@ The application uses scientifically-backed emission factors:
 - **Diet**: Food carbon footprint based on dietary patterns and local sourcing
 
 All calculations follow international standards and are regularly updated to reflect current emission factors.
-
-## 📱 Responsive Design
-
-The application is fully responsive with breakpoints for:
-- Mobile: 320px - 768px
-- Tablet: 768px - 1024px  
-- Desktop: 1024px+
-
-Key responsive features:
-- Adaptive navigation and layouts
-- Touch-friendly interactions
-- Optimized content hierarchy
-- Performance optimization for mobile
 
 ## 🚀 Deployment
 
