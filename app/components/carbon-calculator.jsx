@@ -12,7 +12,7 @@ import { Car, Zap, Utensils, Calculator, Lightbulb, TrendingDown } from "lucide-
 
 export default function CarbonCalculator({ user }) {
   const [inputs, setInputs] = useState({
-    carDistance: "",
+    vehicleDistance: "",
     fuelType: "petrol",
     publicTransport: "",
     flights: "",
@@ -93,12 +93,12 @@ export default function CarbonCalculator({ user }) {
 
   const calculateTransportEmissions = () => {
     let emissions = 0
-    const carDistance = Number.parseFloat(inputs.carDistance) || 0
+    const vehicleDistance = Number.parseFloat(inputs.vehicleDistance) || 0
     const publicTransport = Number.parseFloat(inputs.publicTransport) || 0
     const flights = Number.parseFloat(inputs.flights) || 0
 
-    if (carDistance > 0) {
-      const litersPerDay = carDistance / 8
+    if (vehicleDistance > 0) {
+      const litersPerDay = vehicleDistance / 8
       emissions += litersPerDay * emissionFactors.transport[inputs.fuelType]
     }
     emissions += publicTransport * emissionFactors.transport.publicTransport
@@ -252,13 +252,13 @@ export default function CarbonCalculator({ user }) {
                 <CardContent className="space-y-4">
                   <div className="grid grid-cols-2 gap-4">
                     <div className="space-y-2">
-                      <Label htmlFor="carDistance">Daily Car Distance (km)</Label>
+                      <Label htmlFor="vehicleDistance"> Daily Vehicle Travel (km)</Label>
                       <Input
-                        id="carDistance"
+                        id="vehicleDistance"
                         type="number"
                         placeholder="e.g., 25"
-                        value={inputs.carDistance}
-                        onChange={(e) => handleInputChange("carDistance", e.target.value)}
+                        value={inputs.vehicleDistance}
+                        onChange={(e) => handleInputChange("vehicleDistance", e.target.value)}
                       />
                     </div>
                     <div className="space-y-2">
