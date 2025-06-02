@@ -7,6 +7,11 @@ export interface User {
   carbonScore?: number;
   achievements?: Achievement[];
   goals?: Goal[];
+  totalEmissions?: number;
+  streak?: number;
+  badges?: string[];
+  joinDate?: string;
+  isDemo?: boolean;
 }
 
 export interface Achievement {
@@ -33,4 +38,13 @@ export interface EducationContent {
   category: 'Energy' | 'Transport' | 'Diet';
   difficulty: 'Beginner' | 'Intermediate' | 'Advanced';
   content: string;
+}
+
+export interface AuthState {
+  user: User | null;
+  isLoading: boolean;
+  isAuthenticated: boolean;
+  isDemo?: boolean;
+  login: () => Promise<void>;
+  logout: () => Promise<void>;
 }

@@ -1,0 +1,56 @@
+name: Add Contributor to README
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+
+jobs:
+  add-contributor:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ github.head_ref }}
+
+      - name: Set up Node.js (for script)
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Add contributor to README
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          USERNAME: ${{ github.actor }}
+        run: |
+          #!/bin/bash
+          README=README.md
+          USERLINE="- [${USERNAME}](https://github.com/${USERNAME})"
+
+          # Check if contributor already exists
+          if grep -Fxq "$USERLINE" "$README"; then
+            echo "Contributor already listed."
+          else
+            echo "Adding contributor $USERNAME to README..."
+
+            # Insert contributor under '## Contributors' header
+            awk -v userline="$USERLINE" '
+              BEGIN {added=0}
+              /^## Contributors/ {
+                print
+                if (!added) {
+                  print userline
+                  added=1
+                }
+                next
+              }
+              {print}
+            ' "$README" > tmpfile && mv tmpfile "$README"
+
+            # Commit and push changes
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add "$README"
+            git commit -m "docs: add contributor $USERNAME" || echo "No changes to commit"
+            git push origin HEAD:${{ github.head_ref }}
+          fi

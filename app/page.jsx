@@ -19,25 +19,12 @@ export default function CarbonTracker() {
   const [user, setUser] = useState(null)
   const [isAuthenticated, setIsAuthenticated] = useState(false)
   const [activeTab, setActiveTab] = useState("calculator")
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(false)
 
+    // Remove or modify the initial useEffect
+  // Only load user data after login
   useEffect(() => {
-    // Simulate authentication check
-    setTimeout(() => {
-      const mockUser = {
-        id: "user123",
-        name: "Alex Green",
-        email: "alex@example.com",
-        totalEmissions: 8.5,
-        streak: 12,
-        level: 3,
-        badges: ["first-calculation", "week-streak", "eco-warrior"],
-        joinDate: "2024-01-15",
-      }
-      setUser(mockUser)
-      setIsAuthenticated(true)
-      setLoading(false)
-    }, 1000)
+    // Remove automatic authentication
   }, [])
 
   const handleLogin = () => {
@@ -49,10 +36,10 @@ export default function CarbonTracker() {
         name: "Alex Green",
         email: "alex@example.com",
         totalEmissions: 8.5,
-        streak: 12,
-        level: 3,
+        streak: 1,
+        level: 1,
         badges: ["first-calculation", "week-streak", "eco-warrior"],
-        joinDate: "2024-01-15",
+        joinDate: "2025-01-15",
       }
       setUser(mockUser)
       setIsAuthenticated(true)
@@ -184,8 +171,8 @@ export default function CarbonTracker() {
                     </SheetTrigger>
                     <SheetContent side="right" className="w-[380px] sm:w-[540px]">
                       <SheetHeader className="mb-4">
-                        <SheetTitle>🚀 Coming Up Next!</SheetTitle>
-                        <SheetDescription>A sneak peek at what we're cooking up</SheetDescription>
+                        <SheetTitle>🚀 Coming Soon!</SheetTitle>
+                        <SheetDescription>A sneak peek at what we're cooking!</SheetDescription>
                       </SheetHeader>
                       <div className="space-y-4">
                         <Button 
