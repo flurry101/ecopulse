@@ -4,7 +4,9 @@ import { useState, useEffect } from "react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { Leaf, Trophy, Target, TrendingDown, Award, BookOpen, BarChart3 } from "lucide-react"
+import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet"
+import { Badge } from "@/components/ui/badge"
+import { Leaf, Trophy, Target, TrendingDown, Award, BookOpen, BarChart3, Menu } from "lucide-react"
 import CarbonCalculator from "./components/carbon-calculator"
 import Dashboard from "./components/dashboard"
 import Analytics from "./components/analytics"
@@ -110,7 +112,7 @@ export default function CarbonTracker() {
                   </div>
                 </div>
                 <Button onClick={handleLogin} className="w-full bg-green-600 hover:bg-green-700">
-                  Get Started
+                  Start Your Journey
                 </Button>
               </CardContent>
             </Card>
@@ -156,56 +158,122 @@ export default function CarbonTracker() {
             {/* Navigation Tabs */}
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
               <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-6">
-                <TabsList className="grid w-full grid-cols-3 sm:grid-cols-6 bg-white p-1 rounded-lg shadow-sm gap-1">
-                  <TabsTrigger
-                    value="calculator"
-                    className="flex items-center justify-center space-x-1 sm:space-x-2 text-xs sm:text-sm"
-                  >
-                    <Leaf className="h-3 w-3 sm:h-4 sm:w-4" />
-                    <span className="hidden sm:inline">Calculate</span>
-                    <span className="sm:hidden">Calculate</span>
-                  </TabsTrigger>
-                  <TabsTrigger
-                    value="dashboard"
-                    className="flex items-center justify-center space-x-1 sm:space-x-2 text-xs sm:text-sm"
-                  >
-                    <BarChart3 className="h-3 w-3 sm:h-4 sm:w-4" />
-                    <span className="hidden sm:inline">Dashboard</span>
-                    <span className="sm:hidden">Home</span>
-                  </TabsTrigger>
-                  <TabsTrigger
-                    value="analytics"
-                    className="flex items-center justify-center space-x-1 sm:space-x-2 text-xs sm:text-sm"
-                  >
-                    <TrendingDown className="h-3 w-3 sm:h-4 sm:w-4" />
-                    <span className="hidden sm:inline">Analytics</span>
-                    <span className="sm:hidden">Stats</span>
-                  </TabsTrigger>
-                  <TabsTrigger
-                    value="goals"
-                    className="flex items-center justify-center space-x-1 sm:space-x-2 text-xs sm:text-sm"
-                  >
-                    <Target className="h-3 w-3 sm:h-4 sm:w-4" />
-                    <span className="hidden sm:inline">Goals</span>
-                    <span className="sm:hidden">Goals</span>
-                  </TabsTrigger>
-                  <TabsTrigger
-                    value="achievements"
-                    className="flex items-center justify-center space-x-1 sm:space-x-2 text-xs sm:text-sm"
-                  >
-                    <Trophy className="h-3 w-3 sm:h-4 sm:w-4" />
-                    <span className="hidden sm:inline">Badges</span>
-                    <span className="sm:hidden">Awards</span>
-                  </TabsTrigger>
-                  <TabsTrigger
-                    value="education"
-                    className="flex items-center justify-center space-x-1 sm:space-x-2 text-xs sm:text-sm"
-                  >
-                    <BookOpen className="h-3 w-3 sm:h-4 sm:w-4" />
-                    <span className="hidden sm:inline">Learn</span>
-                    <span className="sm:hidden">Learn</span>
-                  </TabsTrigger>
-                </TabsList>
+                <div className="flex items-center justify-between mb-4">
+                  <TabsList className="flex-1 grid w-full grid-cols-2 bg-white p-1 rounded-lg shadow-sm gap-1">
+                    <TabsTrigger
+                      value="calculator"
+                      className="flex items-center justify-center space-x-2 text-sm py-3"
+                    >
+                      <Leaf className="h-4 w-4" />
+                      <span>Calculate Impact</span>
+                    </TabsTrigger>
+                    <TabsTrigger
+                      value="education"
+                      className="flex items-center justify-center space-x-2 text-sm py-3"
+                    >
+                      <BookOpen className="h-4 w-4" />
+                      <span>Learn & Act</span>
+                    </TabsTrigger>
+                  </TabsList>
+                  
+                  <Sheet>
+                    <SheetTrigger asChild>
+                      <Button variant="outline" size="icon" className="ml-4">
+                        <Menu className="h-5 w-5" />
+                      </Button>
+                    </SheetTrigger>
+                    <SheetContent side="right" className="w-[380px] sm:w-[540px]">
+                      <SheetHeader className="mb-4">
+                        <SheetTitle>Coming Soon</SheetTitle>
+                        <SheetDescription>Preview our upcoming features</SheetDescription>
+                      </SheetHeader>
+                      <div className="space-y-4">
+                        <Button 
+                          variant="ghost" 
+                          className="w-full justify-start p-4 h-auto group"
+                          onClick={() => setActiveTab('dashboard')}
+                        >
+                          <div className="flex items-center space-x-4 w-full">
+                            <div className="bg-gray-100 p-2 rounded-full">
+                              <BarChart3 className="h-5 w-5 text-gray-600" />
+                            </div>
+                            <div className="flex-1 text-left">
+                              <div className="flex items-center gap-2">
+                                <h3 className="font-medium">Personal Dashboard</h3>
+                                <Badge variant="outline" className="group-hover:bg-gray-100">Coming Soon</Badge>
+                              </div>
+                              <p className="text-sm text-gray-600 mt-1">View your environmental impact stats</p>
+                            </div>
+                          </div>
+                        </Button>
+
+                        <Button 
+                          variant="ghost" 
+                          className="w-full justify-start p-4 h-auto group"
+                          onClick={() => setActiveTab('analytics')}
+                        >
+                          <div className="flex items-center space-x-4 w-full">
+                            <div className="bg-gray-100 p-2 rounded-full">
+                              <TrendingDown className="h-5 w-5 text-gray-600" />
+                            </div>
+                            <div className="flex-1 text-left">
+                              <div className="flex items-center gap-2">
+                                <h3 className="font-medium">Analytics</h3>
+                                <Badge variant="outline" className="group-hover:bg-gray-100">Coming Soon</Badge>
+                              </div>
+                              <p className="text-sm text-gray-600 mt-1">Analyze your progress over time</p>
+                            </div>
+                          </div>
+                        </Button>
+
+                        <Button 
+                          variant="ghost" 
+                          className="w-full justify-start p-4 h-auto group"
+                          onClick={() => setActiveTab('goals')}
+                        >
+                          <div className="flex items-center space-x-4 w-full">
+                            <div className="bg-gray-100 p-2 rounded-full">
+                              <Target className="h-5 w-5 text-gray-600" />
+                            </div>
+                            <div className="flex-1 text-left">
+                              <div className="flex items-center gap-2">
+                                <h3 className="font-medium">Goals</h3>
+                                <Badge variant="outline" className="group-hover:bg-gray-100">Coming Soon</Badge>
+                              </div>
+                              <p className="text-sm text-gray-600 mt-1">Set and track sustainability targets</p>
+                            </div>
+                          </div>
+                        </Button>
+
+                        <Button 
+                          variant="ghost" 
+                          className="w-full justify-start p-4 h-auto group"
+                          onClick={() => setActiveTab('achievements')}
+                        >
+                          <div className="flex items-center space-x-4 w-full">
+                            <div className="bg-gray-100 p-2 rounded-full">
+                              <Trophy className="h-5 w-5 text-gray-600" />
+                            </div>
+                            <div className="flex-1 text-left">
+                              <div className="flex items-center gap-2">
+                                <h3 className="font-medium">Achievements</h3>
+                                <Badge variant="outline" className="group-hover:bg-gray-100">Coming Soon</Badge>
+                              </div>
+                              <p className="text-sm text-gray-600 mt-1">View your earned badges and rewards</p>
+                            </div>
+                          </div>
+                        </Button>
+
+                        <div className="mt-8 pt-4 border-t">
+                          <div className="text-center space-y-2">
+                            <p className="text-sm text-gray-600">Get ready for these exciting features!</p>
+                            <p className="text-xs text-gray-500">We're working hard to bring you more ways to track and improve your environmental impact.</p>
+                          </div>
+                        </div>
+                      </div>
+                    </SheetContent>
+                  </Sheet>
+                </div>
 
                 <TabsContent value="dashboard">
                   <Dashboard user={user} />
