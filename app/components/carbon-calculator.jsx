@@ -8,6 +8,7 @@ import { Label } from "@/components/ui/label"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Badge } from "@/components/ui/badge"
+import { Tooltip, TooltipTrigger, TooltipContent, TooltipProvider } from "@/components/ui/tooltip"
 import { Car, Zap, Utensils, Calculator, Lightbulb, TrendingDown } from "lucide-react"
 
 export default function CarbonCalculator({ user }) {
@@ -247,12 +248,24 @@ export default function CarbonCalculator({ user }) {
               <Card>
                 <CardHeader>
                   <CardTitle className="text-lg">🚗 Transportation</CardTitle>
+                  <div className="flex items-center space-x-2 text-sm text-muted-foreground">
                   <CardDescription>How do you get around?</CardDescription>
+                    <TooltipProvider>
+                          <Tooltip>
+                            <TooltipTrigger asChild>
+                              <Lightbulb className="h-4 w-4 text-yellow-600 cursor-pointer" />
+                            </TooltipTrigger>
+                            <TooltipContent side="top" align="right" className="max-w-xs">
+                              Transportation is a major source of carbon emissions, especially from personal vehicles and flights. It varies widely based on distance traveled, fuel type, and mode of transport.
+                            </TooltipContent>
+                          </Tooltip>    
+                    </TooltipProvider>
+                  </div>
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <div className="grid grid-cols-2 gap-4">
                     <div className="space-y-2">
-                      <Label htmlFor="vehicleDistance"> Daily Vehicle Travel (km)</Label>
+                      <Label htmlFor="vehicleDistance">How far do you travel by vehicle every day? (in km)</Label>
                       <Input
                         id="vehicleDistance"
                         type="number"
@@ -262,7 +275,7 @@ export default function CarbonCalculator({ user }) {
                       />
                     </div>
                     <div className="space-y-2">
-                      <Label htmlFor="fuelType">Fuel Type</Label>
+                      <Label htmlFor="fuelType">What type of fuel does your vehicle use?</Label>
                       <Select value={inputs.fuelType} onValueChange={(value) => handleInputChange("fuelType", value)}>
                         <SelectTrigger>
                           <SelectValue />
@@ -278,7 +291,7 @@ export default function CarbonCalculator({ user }) {
                   </div>
                   <div className="grid grid-cols-2 gap-4">
                     <div className="space-y-2">
-                      <Label htmlFor="publicTransport">Public Transport (hours/day)</Label>
+                      <Label htmlFor="publicTransport">How many hours a day do you spend on public transport?</Label>
                       <Input
                         id="publicTransport"
                         type="number"
@@ -288,7 +301,7 @@ export default function CarbonCalculator({ user }) {
                       />
                     </div>
                     <div className="space-y-2">
-                      <Label htmlFor="flights">Flights per year</Label>
+                      <Label htmlFor="flights">How many flights do you take a year?</Label>
                       <Input
                         id="flights"
                         type="number"
@@ -306,12 +319,24 @@ export default function CarbonCalculator({ user }) {
               <Card>
                 <CardHeader>
                   <CardTitle className="text-lg">⚡ Home Energy</CardTitle>
+                  <div className="flex items-center space-x-2 text-sm text-muted-foreground">
                   <CardDescription>Your household energy consumption</CardDescription>
+                    <TooltipProvider>
+                          <Tooltip>
+                            <TooltipTrigger asChild>
+                              <Lightbulb className="h-4 w-4 text-yellow-600 cursor-pointer" />
+                            </TooltipTrigger>
+                            <TooltipContent side="top" align="right" className="max-w-xs">
+                              Home energy use is a significant contributor to carbon emissions, especially from electricity and gas consumption. It varies based on home size, energy sources, and efficiency measures.
+                            </TooltipContent>
+                          </Tooltip>    
+                    </TooltipProvider>
+                  </div>
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <div className="grid grid-cols-2 gap-4">
                     <div className="space-y-2">
-                      <Label htmlFor="electricity">Monthly Electricity (kWh)</Label>
+                      <Label htmlFor="electricity">How much electricity do you use each month? (in kWh)</Label>
                       <Input
                         id="electricity"
                         type="number"
@@ -321,7 +346,7 @@ export default function CarbonCalculator({ user }) {
                       />
                     </div>
                     <div className="space-y-2">
-                      <Label htmlFor="gas">Monthly Gas (cubic meters)</Label>
+                      <Label htmlFor="gas">How much gas do you consume per month (m³)?</Label>
                       <Input
                         id="gas"
                         type="number"
@@ -333,7 +358,7 @@ export default function CarbonCalculator({ user }) {
                   </div>
                   <div className="grid grid-cols-2 gap-4">
                     <div className="space-y-2">
-                      <Label htmlFor="houseSize">House Size</Label>
+                      <Label htmlFor="houseSize">What size is your home?</Label>
                       <Select value={inputs.houseSize} onValueChange={(value) => handleInputChange("houseSize", value)}>
                         <SelectTrigger>
                           <SelectValue />
@@ -346,7 +371,7 @@ export default function CarbonCalculator({ user }) {
                       </Select>
                     </div>
                     <div className="space-y-2">
-                      <Label htmlFor="renewableEnergy">Renewable Energy %</Label>
+                      <Label htmlFor="renewableEnergy">How much % of your energy use is renewable?</Label>
                       <Input
                         id="renewableEnergy"
                         type="number"
@@ -366,7 +391,20 @@ export default function CarbonCalculator({ user }) {
               <Card>
                 <CardHeader>
                   <CardTitle className="text-lg">🍽️ Diet & Consumption</CardTitle>
+                  <div className="flex items-center space-x-2 text-sm text-muted-foreground">
+
                   <CardDescription>Your food and consumption habits</CardDescription>
+                    <TooltipProvider>
+                          <Tooltip>
+                            <TooltipTrigger asChild>
+                              <Lightbulb className="h-4 w-4 text-yellow-600 cursor-pointer" />
+                            </TooltipTrigger>
+                            <TooltipContent side="top" align="right" className="max-w-xs">
+                              Diet and consumption choices can significantly impact your carbon footprint as they contribute to greenhouse gas emissions from food production, waste, and resource use. They often involve complex supply chains and varying levels of sustainability.
+                            </TooltipContent>
+                          </Tooltip>    
+                    </TooltipProvider>
+                  </div>
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <div className="grid grid-cols-2 gap-4">

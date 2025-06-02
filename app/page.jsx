@@ -16,7 +16,7 @@ import AuthProvider from "./components/auth-provider"
 export default function CarbonTracker() {
   const [user, setUser] = useState(null)
   const [isAuthenticated, setIsAuthenticated] = useState(false)
-  const [activeTab, setActiveTab] = useState("dashboard")
+  const [activeTab, setActiveTab] = useState("calculator")
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
@@ -61,7 +61,7 @@ export default function CarbonTracker() {
   const handleLogout = () => {
     setUser(null)
     setIsAuthenticated(false)
-    setActiveTab("dashboard")
+    setActiveTab("calculator")
   }
 
   if (loading) {
@@ -158,20 +158,20 @@ export default function CarbonTracker() {
               <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-6">
                 <TabsList className="grid w-full grid-cols-3 sm:grid-cols-6 bg-white p-1 rounded-lg shadow-sm gap-1">
                   <TabsTrigger
+                    value="calculator"
+                    className="flex items-center justify-center space-x-1 sm:space-x-2 text-xs sm:text-sm"
+                  >
+                    <Leaf className="h-3 w-3 sm:h-4 sm:w-4" />
+                    <span className="hidden sm:inline">Calculate</span>
+                    <span className="sm:hidden">Calculate</span>
+                  </TabsTrigger>
+                  <TabsTrigger
                     value="dashboard"
                     className="flex items-center justify-center space-x-1 sm:space-x-2 text-xs sm:text-sm"
                   >
                     <BarChart3 className="h-3 w-3 sm:h-4 sm:w-4" />
                     <span className="hidden sm:inline">Dashboard</span>
                     <span className="sm:hidden">Home</span>
-                  </TabsTrigger>
-                  <TabsTrigger
-                    value="calculator"
-                    className="flex items-center justify-center space-x-1 sm:space-x-2 text-xs sm:text-sm"
-                  >
-                    <Leaf className="h-3 w-3 sm:h-4 sm:w-4" />
-                    <span className="hidden sm:inline">Calculate Your Carbon Footprint</span>
-                    <span className="sm:hidden">Calculate</span>
                   </TabsTrigger>
                   <TabsTrigger
                     value="analytics"

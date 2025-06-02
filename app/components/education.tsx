@@ -4,7 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Progress } from "@/components/ui/progress"
-import { BookOpen, Play, CheckCircle, Clock, Lightbulb, Globe } from "lucide-react"
+import { BookOpen, Play, CheckCircle, Clock, Lightbulb, Globe, ExternalLink, ChevronRight } from "lucide-react"
 import { EducationContent } from '../../types';
 
 export default function Education() {
@@ -103,6 +103,7 @@ export default function Education() {
       excerpt: "Understanding how carbon offset programs work and their effectiveness in fighting climate change...",
       readTime: "8 min read",
       category: "Science",
+      url: "https://science.howstuffworks.com/environmental/green-science/carbon-offset.htm",
       featured: true,
     },
     {
@@ -301,22 +302,32 @@ export default function Education() {
             {articles.map((article, index) => (
               <div
                 key={index}
-                className={`p-4 border rounded-lg hover:shadow-md transition-shadow cursor-pointer ${
+                className={`relative p-4 border rounded-lg hover:shadow-md transition-shadow cursor-pointer ${
                   article.featured ? "border-green-200 bg-green-50" : "hover:bg-gray-50"
                 }`}
               >
-                <div className="flex items-center justify-between mb-2">
-                  <h4 className="font-semibold text-gray-900">{article.title}</h4>
-                  {article.featured && <Badge className="bg-green-100 text-green-800">Featured</Badge>}
-                </div>
-                <p className="text-sm text-gray-600 mb-3">{article.excerpt}</p>
-                <div className="flex items-center justify-between">
-                  <Badge variant="outline" className="text-xs">
-                    {article.category}
-                  </Badge>
-                  <span className="text-xs text-gray-500">{article.readTime}</span>
-                </div>
+              {/* External link icon in top-right corner */}
+              {article.url && (
+                <button
+                  onClick={() => window.open(article.url, "_blank", "noopener,noreferrer")}
+                  className="absolute top-2 right-2 text-teal-600 hover:text-blue-600"
+                  aria-label="Open article in new tab"
+                >
+                  <ExternalLink className="w-4 h-4" />
+                </button>
+              )}
+              <div className="flex items-center justify-between mb-2">
+                <h4 className="font-semibold text-gray-900">{article.title}</h4>
+                {article.featured && <Badge className="bg-green-100 text-green-800">Featured</Badge>}
               </div>
+              <p className="text-sm text-gray-600 mb-3">{article.excerpt}</p>
+              <div className="flex items-center justify-between">
+                <Badge variant="outline" className="text-xs">
+                  {article.category}
+                </Badge>
+                <span className="text-xs text-gray-500">{article.readTime}</span>
+              </div>
+            </div>
             ))}
           </CardContent>
         </Card>
@@ -334,6 +345,11 @@ export default function Education() {
             <p className="mb-4 opacity-90">
               Reduce single-use plastic consumption for 7 days. Track your progress and share tips with the community!
             </p>
+            <button onClick={() => window.open("https://www.plasticfreejuly.org/", "_blank", "noopener,noreferrer")} 
+            className="flex items-center text-white font-semibold hover:underline mb-4">
+              <ExternalLink className="w-4 h-4 mr-2" />
+              Learn More
+            </button>
             <div className="flex items-center justify-between">
               <div className="text-sm opacity-80">
                 <p>🏆 2,847 participants</p>
