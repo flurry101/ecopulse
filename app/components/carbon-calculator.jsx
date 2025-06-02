@@ -371,7 +371,7 @@ export default function CarbonCalculator({ user }) {
                 <CardContent className="space-y-4">
                   <div className="grid grid-cols-2 gap-4">
                     <div className="space-y-2">
-                      <Label htmlFor="dietType">Diet Type</Label>
+                      <Label htmlFor="dietType">What is your Diet Type?</Label>
                       <Select value={inputs.dietType} onValueChange={(value) => handleInputChange("dietType", value)}>
                         <SelectTrigger>
                           <SelectValue />
@@ -386,7 +386,7 @@ export default function CarbonCalculator({ user }) {
                       </Select>
                     </div>
                     <div className="space-y-2">
-                      <Label htmlFor="localFood">Local Food %</Label>
+                      <Label htmlFor="localFood">What % of your food is locally produced?</Label>
                       <Input
                         id="localFood"
                         type="number"
@@ -400,7 +400,7 @@ export default function CarbonCalculator({ user }) {
                   </div>
                   <div className="grid grid-cols-2 gap-4">
                     <div className="space-y-2">
-                      <Label htmlFor="wasteReduction">Waste Reduction Effort</Label>
+                      <Label htmlFor="wasteReduction">How much effort do you make to reduce waste?</Label>
                       <Select
                         value={inputs.wasteReduction}
                         onValueChange={(value) => handleInputChange("wasteReduction", value)}
@@ -416,7 +416,7 @@ export default function CarbonCalculator({ user }) {
                       </Select>
                     </div>
                     <div className="space-y-2">
-                      <Label htmlFor="recycling">Recycling %</Label>
+                      <Label htmlFor="recycling">What % of your waste do you recycle?</Label>
                       <Input
                         id="recycling"
                         type="number"

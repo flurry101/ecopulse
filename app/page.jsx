@@ -170,8 +170,8 @@ export default function CarbonTracker() {
                     className="flex items-center justify-center space-x-1 sm:space-x-2 text-xs sm:text-sm"
                   >
                     <Leaf className="h-3 w-3 sm:h-4 sm:w-4" />
-                    <span className="hidden sm:inline">Calculate</span>
-                    <span className="sm:hidden">Calc</span>
+                    <span className="hidden sm:inline">Calculate Your Carbon Footprint</span>
+                    <span className="sm:hidden">Calculate</span>
                   </TabsTrigger>
                   <TabsTrigger
                     value="analytics"
