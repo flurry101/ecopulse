@@ -15,8 +15,8 @@ export default function Education() {
       description: "Learn the basics of carbon emissions and how they impact our planet",
       duration: "10 min",
       difficulty: "Beginner",
-      completed: true,
-      progress: 100,
+      completed: false,
+      progress: 0,
       topics: ["Carbon Cycle", "Greenhouse Gases", "Personal Impact"],
       icon: "🌍",
     },
@@ -26,8 +26,8 @@ export default function Education() {
       description: "Explore how different modes of transport affect your carbon footprint",
       duration: "15 min",
       difficulty: "Beginner",
-      completed: true,
-      progress: 100,
+      completed: false,
+      progress: 0,
       topics: ["Car Emissions", "Public Transport", "Active Travel"],
       icon: "🚗",
     },
@@ -38,7 +38,7 @@ export default function Education() {
       duration: "12 min",
       difficulty: "Intermediate",
       completed: false,
-      progress: 60,
+      progress: 0,
       topics: ["Insulation", "Smart Appliances", "Renewable Energy"],
       icon: "🏠",
     },
@@ -111,6 +111,7 @@ export default function Education() {
       excerpt: "Everything you need to know about making the switch to electric transportation...",
       readTime: "12 min read",
       category: "Transportation",
+      url: "https://www.power-sonic.com/blog/types-of-electric-vehicles/",
       featured: false,
     },
     {
@@ -118,6 +119,7 @@ export default function Education() {
       excerpt: "Practical steps to make your home more energy-efficient and environmentally friendly...",
       readTime: "15 min read",
       category: "Energy",
+      url: "https://medium.com/@designwithlead/how-to-plan-for-a-sustainable-home-tips-from-the-experts-d306fdd344e3",
       featured: false,
     },
     {
@@ -125,6 +127,7 @@ export default function Education() {
       excerpt: "Exploring emerging technologies in solar, wind, and other renewable energy sources...",
       readTime: "10 min read",
       category: "Technology",
+      url: "https://earth.org/the-growth-of-renewable-energy-what-does-the-future-hold/",
       featured: true,
     },
   ]
@@ -157,35 +160,6 @@ export default function Education() {
 
   return (
     <div className="space-y-6">
-      {/* Learning Progress */}
-      <Card>
-        <CardHeader>
-          <CardTitle className="flex items-center space-x-2">
-            <BookOpen className="h-5 w-5 text-blue-600" />
-            <span>Learning Progress</span>
-          </CardTitle>
-          <CardDescription>Your sustainability education journey</CardDescription>
-        </CardHeader>
-        <CardContent>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-            <div className="text-center">
-              <div className="text-2xl font-bold text-blue-600">2/5</div>
-              <p className="text-sm text-gray-600">Modules Completed</p>
-            </div>
-            <div className="text-center">
-              <div className="text-2xl font-bold text-green-600">32%</div>
-              <p className="text-sm text-gray-600">Overall Progress</p>
-            </div>
-            <div className="text-center">
-              <div className="text-2xl font-bold text-purple-600">25 min</div>
-              <p className="text-sm text-gray-600">Time Invested</p>
-            </div>
-          </div>
-          <Progress value={32} className="h-3" />
-        </CardContent>
-      </Card>
-
-      {/* Learning Modules */}
       <Card>
         <CardHeader>
           <CardTitle>Learning Modules</CardTitle>
@@ -333,35 +307,6 @@ export default function Education() {
         </Card>
       </div>
 
-      {/* Climate Action Challenge */}
-      <Card>
-        <CardHeader>
-          <CardTitle>🌟 Weekly Climate Action Challenge</CardTitle>
-          <CardDescription>Join thousands of users in this week's sustainability challenge</CardDescription>
-        </CardHeader>
-        <CardContent>
-          <div className="bg-gradient-to-r from-green-500 to-blue-500 text-white p-6 rounded-lg">
-            <h3 className="text-xl font-bold mb-2">Plastic-Free Week Challenge</h3>
-            <p className="mb-4 opacity-90">
-              Reduce single-use plastic consumption for 7 days. Track your progress and share tips with the community!
-            </p>
-            <button onClick={() => window.open("https://www.plasticfreejuly.org/", "_blank", "noopener,noreferrer")} 
-            className="flex items-center text-white font-semibold hover:underline mb-4">
-              <ExternalLink className="w-4 h-4 mr-2" />
-              Learn More
-            </button>
-            <div className="flex items-center justify-between">
-              <div className="text-sm opacity-80">
-                <p>🏆 2,847 participants</p>
-                <p>⏰ 3 days remaining</p>
-              </div>
-              <Button variant="secondary" className="bg-white text-green-600 hover:bg-gray-100">
-                Join Challenge
-              </Button>
-            </div>
-          </div>
-        </CardContent>
-      </Card>
     </div>
   )
 }

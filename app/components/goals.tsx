@@ -8,7 +8,7 @@ import { Label } from "@/components/ui/label"
 import { Progress } from "@/components/ui/progress"
 import { Badge } from "@/components/ui/badge"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Target, Plus, TrendingDown, CheckCircle, Clock } from "lucide-react"
+import { Target, Plus, TrendingDown, CheckCircle, Clock, ExternalLink } from "lucide-react"
 import { User, Goal } from '../../types';
 
 export default function Goals({ user }: { user: User }) {
@@ -401,6 +401,36 @@ export default function Goals({ user }: { user: User }) {
                 </div>
               </div>
             ))}
+          </div>
+        </CardContent>
+      </Card>
+
+            {/* Climate Action Challenge */}
+      <Card>
+        <CardHeader>
+          <CardTitle>🌟 Weekly Climate Action Challenge</CardTitle>
+          <CardDescription>Join thousands of users in this week's sustainability challenge</CardDescription>
+        </CardHeader>
+        <CardContent>
+          <div className="bg-gradient-to-r from-green-500 to-blue-500 text-white p-6 rounded-lg">
+            <h3 className="text-xl font-bold mb-2">Plastic-Free Week Challenge</h3>
+            <p className="mb-4 opacity-90">
+              Reduce single-use plastic consumption for 7 days. Track your progress and share tips with the community!
+            </p>
+            <button onClick={() => window.open("https://www.plasticfreejuly.org/", "_blank", "noopener,noreferrer")} 
+            className="flex items-center text-white font-semibold hover:underline mb-4">
+              <ExternalLink className="w-4 h-4 mr-2" />
+              Learn More
+            </button>
+            <div className="flex items-center justify-between">
+              <div className="text-sm opacity-80">
+                <p>🏆 2,847 participants</p>
+                <p>⏰ 3 days remaining</p>
+              </div>
+              <Button variant="secondary" className="bg-white text-green-600 hover:bg-gray-100">
+                Join Challenge
+              </Button>
+            </div>
           </div>
         </CardContent>
       </Card>

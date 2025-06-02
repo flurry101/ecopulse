@@ -112,7 +112,7 @@ export default function CarbonTracker() {
                   </div>
                 </div>
                 <Button onClick={handleLogin} className="w-full bg-green-600 hover:bg-green-700">
-                  Start Your Journey
+                  Start Your Journey 
                 </Button>
               </CardContent>
             </Card>
@@ -165,14 +165,14 @@ export default function CarbonTracker() {
                       className="flex items-center justify-center space-x-2 text-sm py-3"
                     >
                       <Leaf className="h-4 w-4" />
-                      <span>Calculate Impact</span>
+                      <span>Calculate Carbon Impact⚡</span>
                     </TabsTrigger>
                     <TabsTrigger
                       value="education"
                       className="flex items-center justify-center space-x-2 text-sm py-3"
                     >
                       <BookOpen className="h-4 w-4" />
-                      <span>Learn & Act</span>
+                      <span>Learn 💡</span>
                     </TabsTrigger>
                   </TabsList>
                   
@@ -184,8 +184,8 @@ export default function CarbonTracker() {
                     </SheetTrigger>
                     <SheetContent side="right" className="w-[380px] sm:w-[540px]">
                       <SheetHeader className="mb-4">
-                        <SheetTitle>Coming Soon</SheetTitle>
-                        <SheetDescription>Preview our upcoming features</SheetDescription>
+                        <SheetTitle>🚀 Coming Up Next!</SheetTitle>
+                        <SheetDescription>A sneak peek at what we're cooking up</SheetDescription>
                       </SheetHeader>
                       <div className="space-y-4">
                         <Button 
