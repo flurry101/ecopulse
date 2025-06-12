@@ -1,4 +1,8 @@
-# Ecopulse - Carbon Footprint Tracker
+# Ecopulse 
+
+<img width="120" alt="Icon" src="app/favicon.ico" align="right" />
+
+**EcoPulse** is a responsive web application that helps individuals understand and reduce their carbon footprint. By combining a personal carbon calculator with educational content, quizzes, and gamified progress tracking, the app empowers users to make informed lifestyle changes. With personlized insights, sustainability tips, and education-driven features, EcoPulse turns awareness into action— reducing one carbon footprint at a time.
 
 ## Table of Contents
 1. [Introduction](#introduction)  
@@ -16,8 +20,6 @@
 
 ## Introduction
 
-A comprehensive, responsive web application for tracking personal carbon emissions and promoting sustainable lifestyle choices through gamification, education, and data-driven insights.
-
 ### 🌟 Features
 
 #### Core Functionality
@@ -30,7 +32,6 @@ A comprehensive, responsive web application for tracking personal carbon emissio
 - **Responsive Design**: Fully responsive interface optimized for all devices (mobile, tablet, desktop)  
 - **Modern UI**: Clean, intuitive interface built with React, Tailwind CSS and Shadcn/UI  
 - **Interactive Learning**: Engaging environmental quiz with instant feedback  
-- **Progress Visualization**: Charts, graphs, and progress bars for clear insights  
 - **Community Features**: Global community engagement and support system  
 
 ---
@@ -136,37 +137,22 @@ Ecopulse successfully combines data-driven emission calculations with engaging e
 
 ---
 
-## 📁 Project Structure
+## Contributors
 
-```
-ecopulse/
-├── app/                          # Next.js App Router
-│   ├── components/              # React components (TSX/JSX)
-│   │   ├── ui/                 # Reusable UI components
-│   │   ├── dashboard.tsx       # Main dashboard
-│   │   ├── carbon-calculator.jsx # Emission calculator
-│   │   ├── analytics.tsx       # Data visualization
-│   │   ├── achievements.tsx    # Badge system
-│   │   ├── goals.tsx          # Goal management
-│   │   ├── education.tsx      # Learning content
-│   │   ├── environmental-quiz.tsx # Interactive quiz
-│   │   ├── community-features.tsx # Community components
-│   │   └── auth-provider.jsx   # Authentication context
-│   ├── hooks/                   # Custom React hooks
-│   ├── lib/                    # Shared utilities
-│   ├── types/                  # TypeScript type definitions
-│   ├── globals.css             # Global styles
-│   ├── layout.jsx             # Root layout
-│   └── page.jsx               # Main application
-├── components/                  # Shared components
-├── public/                     # Static assets
-├── styles/                     # Additional styles
-├── vercel.json                 # Vercel deployment configuration
-├── next.config.mjs             # Next.js configuration
-├── tailwind.config.ts         # Tailwind configuration
-├── tsconfig.json              # TypeScript configuration
-└── package.json               # Dependencies and scripts
-```
+- [Sravya](https://github.com/flurry101)
+
+---
+
+## References
+
+- Carbon emission factors from EPA and IPCC guidelines  
+- UI components from Shadcn/UI  
+- Icons from Lucide React  
+- Inspiration from leading sustainability apps  
+
+---
+
+## Additional Sections
 
 ### 🚀 Getting Started
 
@@ -201,95 +187,39 @@ ecopulse/
 
 ---
 
-## Contributors
-
-- [Sravya](https://github.com/flurry101)
-
----
-
-## References
-
-- Carbon emission factors from EPA and IPCC guidelines  
-- UI components from Shadcn/UI  
-- Icons from Lucide React  
-- Inspiration from leading sustainability apps  
-
----
-
-## Additional Sections
-
-### 🚀 Getting Started
-
-#### Prerequisites
-- Node.js 18+  
-- npm or yarn package manager  
-
-### Installation
-
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/yourusername/ecopulse.git
-   cd ecopulse
-   ```
-
-2. **Install dependencies**
-   ```bash
-   npm install
-   # or
-   yarn install
-   ```
-
-3. **Environment Setup (Optional)**
-   ```bash
-   cp .env.local.example .env.local
-   # Edit .env.local with your Auth0 credentials (optional)
-   ```
-
-4. **Run the development server**
-   ```bash
-   npm run dev
-   # or
-   yarn dev
-   ```
-
-5. **Open your browser**
-   Navigate to [http://localhost:3000](http://localhost:3000)
-
 ## 📁 Project Structure
 
 ```
 ecopulse/
 ├── app/                          # Next.js App Router
-│   ├── api/                      # API routes (JavaScript)
-│   │   ├── carbon/              # Carbon calculation endpoints
-│   │   ├── users/               # User management
-│   │   ├── goals/               # Goal tracking
-│   │   └── achievements/        # Badge system
-│   ├── components/              # React components (JSX)
-│   │   ├── shared/              # Reusable components
-│   │   ├── dashboard.jsx        # Main dashboard
+│   ├── components/              # React components (TSX/JSX)
+│   │   ├── ui/                 # Reusable UI components
+│   │   ├── dashboard.tsx       # Main dashboard
 │   │   ├── carbon-calculator.jsx # Emission calculator
-│   │   ├── analytics.jsx        # Data visualization
-│   │   ├── achievements.jsx     # Badge system
-│   │   ├── goals.jsx           # Goal management
-│   │   ├── education.jsx       # Learning content
+│   │   ├── analytics.tsx       # Data visualization
+│   │   ├── achievements.tsx    # Badge system
+│   │   ├── goals.tsx          # Goal management
+│   │   ├── education.tsx      # Learning content
+│   │   ├── environmental-quiz.tsx # Interactive quiz
+│   │   ├── community-features.tsx # Community components
 │   │   └── auth-provider.jsx   # Authentication context
-│   ├── hooks/                   # Custom React hooks (JavaScript)
-│   ├── utils/                   # Utility functions (JavaScript)
+│   ├── hooks/                   # Custom React hooks
+│   ├── lib/                    # Shared utilities
+│   ├── types/                  # TypeScript type definitions
 │   ├── globals.css             # Global styles
-│   ├── layout.jsx              # Root layout
-│   └── page.jsx                # Main application
-├── components/ui/               # Shadcn/UI components
-├── lib/                        # Shared utilities
+│   ├── layout.jsx             # Root layout
+│   └── page.jsx               # Main application
+├── components/                  # Shared components
 ├── public/                     # Static assets
-├── .env.local.example          # Environment variables template
+├── styles/                     # Additional styles
 ├── vercel.json                 # Vercel deployment configuration
-├── next.config.js              # Next.js configuration
-├── package.json                # Dependencies and scripts
-└── README.md
+├── next.config.mjs             # Next.js configuration
+├── tailwind.config.ts         # Tailwind configuration
+├── tsconfig.json              # TypeScript configuration
+└── package.json               # Dependencies and scripts
 ```
 
-## 🔧 API Endpoints
+<!--## 🔧 API Endpoints
 
 ### Carbon Calculations
 - `POST /api/carbon/calculations` - Save new calculation
@@ -306,9 +236,11 @@ ecopulse/
 
 ### Achievements
 - `GET /api/achievements?userId={id}` - Get user's badges
-- `POST /api/achievements` - Award badge to user
+- `POST /api/achievements` - Award badge to user-->
 
-## 🔐 Authentication
+---
+
+<!--## 🔐 Authentication 
 
 ### Auth0 Integration
 The application supports Auth0 authentication for production use:
@@ -328,7 +260,7 @@ The application supports Auth0 authentication for production use:
 3. **Demo Mode Fallback**
    - App works without Auth0 configuration
    - Uses demo user for development and testing
-   - Seamless transition to Auth0 when configured
+   - Seamless transition to Auth0 when configured -->
 
 ## 🤝 Contributing
 
@@ -338,16 +270,11 @@ The application supports Auth0 authentication for production use:
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
+---
+
 ## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🙏 Acknowledgments
-
-- Carbon emission factors from EPA and IPCC guidelines
-- UI components from Shadcn/UI
-- Icons from Lucide React
-- Inspiration from leading sustainability apps
 
 ---
 
