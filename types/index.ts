@@ -35,7 +35,7 @@ export interface EducationContent {
   id: string;
   title: string;
   description: string;
-  category: 'Energy' | 'Transport' | 'Diet';
+  category: 'Energy' | 'Transport' | 'Diet' | 'Waste' | 'Science' | 'Technology';
   difficulty: 'Beginner' | 'Intermediate' | 'Advanced';
   content: string;
 }

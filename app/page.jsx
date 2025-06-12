@@ -14,6 +14,7 @@ import Achievements from "./components/achievements"
 import Education from "./components/education"
 import Goals from "./components/goals"
 import AuthProvider from "./components/auth-provider"
+import CommunityFeatures from "./components/community-features"
 
 export default function CarbonTracker() {
   const [user, setUser] = useState(null)
@@ -21,7 +22,7 @@ export default function CarbonTracker() {
   const [activeTab, setActiveTab] = useState("calculator")
   const [loading, setLoading] = useState(false)
 
-    // Remove or modify the initial useEffect
+  // Remove or modify the initial useEffect
   // Only load user data after login
   useEffect(() => {
     // Remove automatic authentication
@@ -76,14 +77,14 @@ export default function CarbonTracker() {
                 </div>
                 <CardTitle className="text-2xl font-bold text-gray-900">Welcome to EcoPulse</CardTitle>
                 <CardDescription className="text-gray-600">
-                  Your personal carbon footprint tracker and sustainability companion
+                  Your personal carbon footprint calculator and sustainability companion
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="grid grid-cols-2 gap-4 text-center">
                   <div className="p-3 bg-green-50 rounded-lg">
                     <BarChart3 className="h-6 w-6 text-green-600 mx-auto mb-1" />
-                    <p className="text-sm font-medium">Track Emissions</p>
+                    <p className="text-sm font-medium">Calculate Your Footprint</p>
                   </div>
                   <div className="p-3 bg-blue-50 rounded-lg">
                     <Trophy className="h-6 w-6 text-blue-600 mx-auto mb-1" />
@@ -99,7 +100,7 @@ export default function CarbonTracker() {
                   </div>
                 </div>
                 <Button onClick={handleLogin} className="w-full bg-green-600 hover:bg-green-700">
-                  Start Your Journey 
+                  Start Your Journey! 
                 </Button>
               </CardContent>
             </Card>
@@ -135,12 +136,56 @@ export default function CarbonTracker() {
                       </div>
                     </div>
                     <Button variant="outline" size="sm" onClick={handleLogout} className="text-xs sm:text-sm">
-                      Sign Out
+                      Exit
                     </Button>
                   </div>
                 </div>
               </div>
             </header>
+
+            {/* Hero Section */}
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+              <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+                <div className="flex-1 text-center md:text-left">
+                  <h1 className="text-3xl md:text-4xl font-bold text-green-900 mb-4">
+                  🌍 Learn. Measure. Transform. 
+                  </h1>
+                  <p className="text-lg text-gray-600 mb-8">
+                  Every footprint tells a story — discover yours and write a better ending.
+                  </p>
+                  <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                    <Button
+                      size="lg"
+                      onClick={() => setActiveTab('education')}
+                      className="bg-green-600 hover:bg-green-700"
+                    >
+                      <BookOpen className="h-5 w-5 mr-2" />
+                      Your Eco Glow-Up Starts Here 💅
+                    </Button>
+                    <Button
+                      size="lg"
+                      onClick={() => setActiveTab('calculator')}
+                      variant="outline"
+                      className="border-green-600 text-green-600 hover:bg-green-50"
+                    >
+                      <Leaf className="h-5 w-5 mr-2" />
+                      Calculate My Footprint
+                    </Button>
+                  </div>
+                </div>
+                <div className="flex-1 w-full md:w-auto">
+                  <div className="aspect-video rounded-lg bg-gradient-to-br from-green-50 to-blue-50 shadow-lg flex items-center justify-center">
+                  <img 
+                    src="/hero.jpg" 
+                    alt="EcoPulse" 
+                    width={1000} 
+                    height={1000}
+                    className="w-full h-full object-cover"
+                  />
+                  </div>
+                </div>
+              </div>
+            </div>
 
             {/* Navigation Tabs */}
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
@@ -286,6 +331,9 @@ export default function CarbonTracker() {
                   <Education />
                 </TabsContent>
               </Tabs>
+
+              {/* Community Features */}
+              <CommunityFeatures />
             </div>
           </>
         )}

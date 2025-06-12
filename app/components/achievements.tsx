@@ -162,9 +162,9 @@ export default function Achievements({ user }: { user: User }) {
             <Star className="h-4 w-4 text-purple-600" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold text-purple-600">Level {user?.level}</div>
+            <div className="text-2xl font-bold text-purple-600">Level {user?.level || 1}</div>
             <Progress value={65} className="mt-2" />
-            <p className="text-xs text-muted-foreground mt-1">65% to Level {user?.level + 1}</p>
+            <p className="text-xs text-muted-foreground mt-1">65% to Level {(user?.level || 1) + 1}</p>
           </CardContent>
         </Card>
 
@@ -194,11 +194,11 @@ export default function Achievements({ user }: { user: User }) {
             {earnedBadges.map((badge) => (
               <div
                 key={badge.id}
-                className={`p-4 border-2 rounded-lg ${getRarityBorder(badge.rarity)} bg-white hover:shadow-md transition-shadow`}
+                className={`p-4 border-2 rounded-lg ${getRarityBorder(badge.rarity as "common" | "rare" | "uncommon" | "legendary" | "epic")} bg-white hover:shadow-md transition-shadow`}
               >
                 <div className="flex items-center justify-between mb-3">
                   <div className="text-3xl">{badge.icon}</div>
-                  <Badge className={getRarityColor(badge.rarity)}>{badge.rarity}</Badge>
+                  <Badge className={getRarityColor(badge.rarity as "common" | "rare" | "uncommon" | "legendary" | "epic")}>{badge.rarity}</Badge>
                 </div>
                 <h3 className="font-semibold text-gray-900 mb-1">{badge.name}</h3>
                 <p className="text-sm text-gray-600 mb-2">{badge.description}</p>
@@ -226,11 +226,11 @@ export default function Achievements({ user }: { user: User }) {
             {availableBadges.map((badge) => (
               <div
                 key={badge.id}
-                className={`p-4 border-2 border-dashed ${getRarityBorder(badge.rarity)} rounded-lg bg-gray-50 hover:bg-gray-100 transition-colors`}
+                className={`p-4 border-2 border-dashed ${getRarityBorder(badge.rarity as "common" | "uncommon" | "rare" | "epic" | "legendary")} rounded-lg bg-gray-50 hover:bg-gray-100 transition-colors`}
               >
                 <div className="flex items-center justify-between mb-3">
                   <div className="text-3xl opacity-60">{badge.icon}</div>
-                  <Badge variant="outline" className={getRarityColor(badge.rarity)}>
+                  <Badge variant="outline" className={getRarityColor(badge.rarity as "common" | "uncommon" | "rare" | "epic" | "legendary")}>
                     {badge.rarity}
                   </Badge>
                 </div>

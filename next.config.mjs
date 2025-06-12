@@ -9,6 +9,13 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
+  experimental: {
+    optimizeCss: true,
+  },
+  output: process.platform === 'win32' ? undefined : 'standalone',
+  poweredByHeader: false,
+  compress: true,
+  reactStrictMode: false,
 }
 
 export default nextConfig
