@@ -1,10 +1,12 @@
-# Ecopulse 
+# EcoPulse 
 
 <img width="120" alt="Icon" src="app/favicon.ico" align="right" />
 
 **EcoPulse** is a responsive web application that helps individuals understand and reduce their carbon footprint. By combining a personal carbon calculator with educational content, quizzes, and gamified progress tracking, the app empowers users to make informed lifestyle changes. With personlized insights, sustainability tips, and education-driven features, EcoPulse turns awareness into action— reducing one carbon footprint at a time.
 
-## Table of Contents
+---
+
+<!-- ## Table of Contents
 1. [Introduction](#introduction)  
 2. [Motivation](#motivation)  
 3. [Problem Definition](#problem-definition)  
@@ -136,27 +138,12 @@ Ecopulse successfully combines data-driven emission calculations with engaging e
 - **IoT Integration**: Connect with smart home devices for automatic tracking 
 
 ---
+-->
 
-## Contributors
+## 🚀 Getting Started 
 
-- [Sravya](https://github.com/flurry101)
 
----
-
-## References
-
-- Carbon emission factors from EPA and IPCC guidelines  
-- UI components from Shadcn/UI  
-- Icons from Lucide React  
-- Inspiration from leading sustainability apps  
-
----
-
-## Additional Sections
-
-### 🚀 Getting Started
-
-#### Prerequisites
+### Prerequisites
 - Node.js 18+  
 - npm or pnpm package manager  
 
@@ -275,6 +262,21 @@ The application supports Auth0 authentication for production use:
 ## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
+
+## Contributors
+
+- [Sravya](https://github.com/flurry101)
+
+---
+
+## References
+
+- Carbon emission factors from EPA and IPCC guidelines  
+- UI components from Shadcn/UI  
+- Icons from Lucide React  
+- Inspiration from leading sustainability apps  
 
 ---
 
