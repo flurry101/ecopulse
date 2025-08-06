@@ -176,6 +176,7 @@ Ecopulse successfully combines data-driven emission calculations with engaging e
 
 ## 📁 Project Structure
 
+```
 ecopulse/
 ├── app/                          # Next.js App Router
 │   ├── components/              # React components (TSX/JSX)
@@ -199,7 +200,9 @@ ecopulse/
 └── package.json               # Dependencies and scripts
 ```
 
+
 <!--
+
 ## 📁 Project Structure
 
 ```
@@ -249,7 +252,9 @@ ecopulse/
 
 ### Achievements
 - `GET /api/achievements?userId={id}` - Get user's badges
-- `POST /api/achievements` - Award badge to user-->
+- `POST /api/achievements` - Award badge to user 
+
+-->
 
 ---
 
