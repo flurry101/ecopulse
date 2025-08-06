@@ -1,0 +1,251 @@
+"use client"
+
+import { useState } from "react"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
+import { Button } from "@/components/ui/button"
+import { Progress } from "@/components/ui/progress"
+import { BookOpen, Play, Clock } from "lucide-react"
+import { VideoModal } from "@/components/video-modal"
+import { cn } from "@/lib/utils"
+
+type Difficulty = "Beginner" | "Intermediate" | "Advanced"
+type Category = "Science" | "Transport" | "Energy" | "Diet"
+
+interface Module {
+  id: number
+  title: string
+  description: string
+  duration: string
+  difficulty: Difficulty
+  completed: boolean
+  progress: number
+  topics: string[]
+  icon: string
+  category: Category
+  videoId: string
+  hasVideo: boolean
+}
+
+const getDifficultyColor = (difficulty: Difficulty): string => {
+  switch (difficulty) {
+    case "Beginner":
+      return "bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300"
+    case "Intermediate":
+      return "bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-300"
+    case "Advanced":
+      return "bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-300"
+    default:
+      return "bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-gray-300"
+  }
+}
+
+const getCategoryColor = (category: Category): string => {
+  switch (category) {
+    case "Science":
+      return "bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300"
+    case "Transport":
+      return "bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300"
+    case "Energy":
+      return "bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-300"
+    case "Diet":
+      return "bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-300"
+    default:
+      return "bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-gray-300"
+  }
+}
+
+export default function Education() {
+  const styles = {
+    container: "mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8 overflow-x-hidden min-h-screen",
+    moduleCard: "group rounded-lg border p-4 sm:p-6 hover:shadow-md transition-all duration-200",
+    moduleLayout: "flex flex-col sm:flex-row gap-4",
+    icon: "flex-shrink-0 text-3xl sm:text-4xl",
+    content: "flex-grow min-w-0",
+    header: "flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4",
+    title: "font-semibold text-lg sm:text-xl text-gray-900 dark:text-gray-100 truncate",
+    badges: "flex flex-wrap gap-2",
+    badge: "px-2 py-1 text-xs sm:text-sm whitespace-nowrap",
+    description: "mt-2 text-sm sm:text-base text-gray-600 dark:text-gray-300 line-clamp-2",
+    topics: "mt-4 flex flex-wrap gap-2",
+    actions: "mt-4 flex flex-wrap gap-2"
+  }
+
+  const [selectedVideo, setSelectedVideo] = useState<{
+    title: string
+    description: string
+    emoji: string
+    videoId: string
+  } | null>(null)
+
+  const learningModules: Module[] = [
+    {
+      id: 1,
+      title: "Understanding Carbon Footprints",
+      description: "Learn the basics of carbon emissions and how they impact our planet",
+      duration: "10 min",
+      difficulty: "Beginner",
+      completed: false,
+      progress: 0,
+      topics: ["Carbon Cycle", "Greenhouse Gases", "Personal Impact"],
+      icon: "🌍",
+      category: "Science",
+      videoId: "_k__WPp_5R4",
+      hasVideo: true
+    },
+    {
+      id: 2,
+      title: "Transportation & Emissions",
+      description: "Explore how different modes of transport affect your carbon footprint",
+      duration: "15 min",
+      difficulty: "Beginner",
+      completed: false,
+      progress: 0,
+      topics: ["Car Emissions", "Public Transport", "Active Travel"],
+      icon: "🚗",
+      category: "Transport",
+      videoId: "TkXEU5ng8rE",
+      hasVideo: true
+    },
+    {
+      id: 3,
+      title: "Home Energy Efficiency",
+      description: "Discover ways to reduce energy consumption at home",
+      duration: "12 min",
+      difficulty: "Intermediate",
+      completed: false,
+      progress: 0,
+      topics: ["Insulation", "Smart Appliances", "Renewable Energy"],
+      icon: "🏠",
+      category: "Energy",
+      videoId: "RVpNVoiCVvc",
+      hasVideo: true
+    },
+    {
+      id: 4,
+      title: "Sustainable Diet Choices",
+      description: "Learn how food choices impact the environment",
+      duration: "18 min",
+      difficulty: "Intermediate",
+      completed: false,
+      progress: 0,
+      topics: ["Plant-based Eating", "Local Food", "Food Waste"],
+      icon: "🥗",
+      category: "Diet",
+      videoId: "Ldm0bbr9WGI",
+      hasVideo: true
+    },
+    {
+      id: 5,
+      title: "Climate Science Fundamentals",
+      description: "Deep dive into climate change science and solutions",
+      duration: "25 min",
+      difficulty: "Advanced",
+      completed: false,
+      progress: 0,
+      topics: ["Climate Models", "Tipping Points", "Mitigation Strategies"],
+      icon: "🔬",
+      category: "Science",
+      videoId: "B3hpN8Odu1A",
+      hasVideo: true
+    }
+  ]
+
+  return (
+    <div className={styles.container}>
+      <Card className="w-full overflow-hidden">
+        <CardHeader>
+          <CardTitle className="text-2xl sm:text-3xl font-bold">
+            Learning Modules
+          </CardTitle>
+          <CardDescription className="text-base sm:text-lg">
+            Learn the language of the planet and speak it with action 🌏✊
+          </CardDescription>
+        </CardHeader>
+        <CardContent className="space-y-6 overflow-x-hidden">
+          {learningModules.map((module) => (
+            <div key={module.id} className={styles.moduleCard}>
+              <div className={styles.moduleLayout}>
+                <div className={styles.icon}>{module.icon}</div>
+                <div className={styles.content}>
+                  <div className={styles.header}>
+                    <h3 className={styles.title}>{module.title}</h3>
+                    <div className={styles.badges}>
+                      <Badge
+                        variant="secondary"
+                        className={cn(styles.badge, getCategoryColor(module.category))}
+                      >
+                        {module.category}
+                      </Badge>
+                      <Badge
+                        variant="secondary"
+                        className={cn(styles.badge, getDifficultyColor(module.difficulty))}
+                      >
+                        {module.difficulty}
+                      </Badge>
+                    </div>
+                  </div>
+                  <p className={styles.description}>{module.description}</p>
+                  <div className={styles.topics}>
+                    <Badge variant="outline" className="gap-1 text-xs sm:text-sm">
+                      <Clock className="w-3 h-3" />
+                      {module.duration}
+                    </Badge>
+                    {module.topics.map((topic) => (
+                      <Badge
+                        key={topic}
+                        variant="outline"
+                        className="text-xs sm:text-sm"
+                      >
+                        {topic}
+                      </Badge>
+                    ))}
+                  </div>
+                  <div className="mt-4">
+                    <Progress value={module.progress} className="h-2" />
+                  </div>
+                  <div className={styles.actions}>
+                    <Button
+                      size="sm"
+                      className="gap-2 min-w-[44px] min-h-[44px]"
+                      onClick={() =>
+                        setSelectedVideo({
+                          title: module.title,
+                          description: module.description,
+                          emoji: module.icon,
+                          videoId: module.videoId,
+                        })
+                      }
+                    >
+                      <Play className="w-4 h-4" />
+                      Start Learning
+                    </Button>
+                    <Button 
+                      variant="outline" 
+                      size="sm" 
+                      className="gap-2 min-w-[44px] min-h-[44px]"
+                    >
+                      <BookOpen className="w-4 h-4" />
+                      View Resources
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </CardContent>
+      </Card>
+
+      {selectedVideo && (
+        <VideoModal
+          isOpen={!!selectedVideo}
+          onClose={() => setSelectedVideo(null)}
+          title={selectedVideo.title}
+          description={selectedVideo.description}
+          emoji={selectedVideo.emoji}
+          videoId={selectedVideo.videoId}
+        />
+      )}
+    </div>
+  )
+}

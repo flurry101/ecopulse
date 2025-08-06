@@ -176,6 +176,32 @@ Ecopulse successfully combines data-driven emission calculations with engaging e
 
 ## 📁 Project Structure
 
+ecopulse/
+├── app/                          # Next.js App Router
+│   ├── components/              # React components (TSX/JSX)
+│   │   ├── ui/                 # Reusable UI components
+│   │   ├── education.tsx      # Learning content
+│   │   ├── environmental-quiz.tsx # Interactive quiz
+│   │   └── community-features.tsx # Community components
+│   ├── hooks/                   # Custom React hooks
+│   ├── lib/                    # Shared utilities
+│   ├── types/                  # TypeScript type definitions
+│   ├── globals.css             # Global styles
+│   ├── layout.jsx             # Root layout
+│   └── page.jsx               # Main application
+├── components/                  # Shared components
+├── public/                     # Static assets
+├── styles/                     # Additional styles
+├── vercel.json                 # Vercel deployment configuration
+├── next.config.mjs             # Next.js configuration
+├── tailwind.config.ts         # Tailwind configuration
+├── tsconfig.json              # TypeScript configuration
+└── package.json               # Dependencies and scripts
+```
+
+<!--
+## 📁 Project Structure
+
 ```
 ecopulse/
 ├── app/                          # Next.js App Router
@@ -206,7 +232,7 @@ ecopulse/
 └── package.json               # Dependencies and scripts
 ```
 
-<!--## 🔧 API Endpoints
+## 🔧 API Endpoints
 
 ### Carbon Calculations
 - `POST /api/carbon/calculations` - Save new calculation
