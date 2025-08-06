@@ -198,6 +198,7 @@ ecopulse/
 │   └── video-modal.tsx          
 ├── hooks/                     # Custom React hooks
 ├── lib/                     # Shared utilities
+├── utils/                     # Helper functions (amth, formatting, calculations)
 ├── public/                     # Static assets
 ├── types/                     # TypeScript type definitions
 ├── styles/                     # Additional styles
