@@ -208,103 +208,15 @@ export default function CarbonTracker() {
                     </TabsTrigger>
                   </TabsList>
                   
+                  {/* Sheet navigation hidden temporarily
                   <Sheet>
                     <SheetTrigger asChild>
                       <Button variant="outline" size="icon" className="ml-4">
                         <Menu className="h-5 w-5" />
                       </Button>
                     </SheetTrigger>
-                    <SheetContent side="right" className="w-[380px] sm:w-[540px]">
-                      <SheetHeader className="mb-4">
-                        <SheetTitle>🚀 Coming Soon!</SheetTitle>
-                        <SheetDescription>A sneak peek at what we're cooking!</SheetDescription>
-                      </SheetHeader>
-                      <div className="space-y-4">
-                        <Button 
-                          variant="ghost" 
-                          className="w-full justify-start p-4 h-auto group"
-                          onClick={() => setActiveTab('dashboard')}
-                        >
-                          <div className="flex items-center space-x-4 w-full">
-                            <div className="bg-gray-100 p-2 rounded-full">
-                              <BarChart3 className="h-5 w-5 text-gray-600" />
-                            </div>
-                            <div className="flex-1 text-left">
-                              <div className="flex items-center gap-2">
-                                <h3 className="font-medium">Personal Dashboard</h3>
-                                <Badge variant="outline" className="group-hover:bg-gray-100">Coming Soon</Badge>
-                              </div>
-                              <p className="text-sm text-gray-600 mt-1">View your environmental impact stats</p>
-                            </div>
-                          </div>
-                        </Button>
-
-                        <Button 
-                          variant="ghost" 
-                          className="w-full justify-start p-4 h-auto group"
-                          onClick={() => setActiveTab('analytics')}
-                        >
-                          <div className="flex items-center space-x-4 w-full">
-                            <div className="bg-gray-100 p-2 rounded-full">
-                              <TrendingDown className="h-5 w-5 text-gray-600" />
-                            </div>
-                            <div className="flex-1 text-left">
-                              <div className="flex items-center gap-2">
-                                <h3 className="font-medium">Analytics</h3>
-                                <Badge variant="outline" className="group-hover:bg-gray-100">Coming Soon</Badge>
-                              </div>
-                              <p className="text-sm text-gray-600 mt-1">Analyze your progress over time</p>
-                            </div>
-                          </div>
-                        </Button>
-
-                        <Button 
-                          variant="ghost" 
-                          className="w-full justify-start p-4 h-auto group"
-                          onClick={() => setActiveTab('goals')}
-                        >
-                          <div className="flex items-center space-x-4 w-full">
-                            <div className="bg-gray-100 p-2 rounded-full">
-                              <Target className="h-5 w-5 text-gray-600" />
-                            </div>
-                            <div className="flex-1 text-left">
-                              <div className="flex items-center gap-2">
-                                <h3 className="font-medium">Goals</h3>
-                                <Badge variant="outline" className="group-hover:bg-gray-100">Coming Soon</Badge>
-                              </div>
-                              <p className="text-sm text-gray-600 mt-1">Set and track sustainability targets</p>
-                            </div>
-                          </div>
-                        </Button>
-
-                        <Button 
-                          variant="ghost" 
-                          className="w-full justify-start p-4 h-auto group"
-                          onClick={() => setActiveTab('achievements')}
-                        >
-                          <div className="flex items-center space-x-4 w-full">
-                            <div className="bg-gray-100 p-2 rounded-full">
-                              <Trophy className="h-5 w-5 text-gray-600" />
-                            </div>
-                            <div className="flex-1 text-left">
-                              <div className="flex items-center gap-2">
-                                <h3 className="font-medium">Achievements</h3>
-                                <Badge variant="outline" className="group-hover:bg-gray-100">Coming Soon</Badge>
-                              </div>
-                              <p className="text-sm text-gray-600 mt-1">View your earned badges and rewards</p>
-                            </div>
-                          </div>
-                        </Button>
-
-                        <div className="mt-8 pt-4 border-t">
-                          <div className="text-center space-y-2">
-                            <p className="text-sm text-gray-600">Get ready for these exciting features!</p>
-                            <p className="text-xs text-gray-500">We're working hard to bring you more ways to track and improve your environmental impact.</p>
-                          </div>
-                        </div>
-                      </div>
-                    </SheetContent>
                   </Sheet>
+                  */}
                 </div>
 
                 <TabsContent value="dashboard">
