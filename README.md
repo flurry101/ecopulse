@@ -180,18 +180,25 @@ Ecopulse successfully combines data-driven emission calculations with engaging e
 ecopulse/
 ├── app/                          # Next.js App Router
 │   ├── components/              # React components (TSX/JSX)
-│   │   ├── ui/                 # Reusable UI components
-│   │   ├── education.tsx      # Learning content
+│   │   ├── shared/                 
+│   │   ├── favicon.ico         # Favicon
+│   │   ├── education.tsx      # Learning resources and content
 │   │   ├── environmental-quiz.tsx # Interactive quiz
 │   │   └── community-features.tsx # Community components
+│   ├── utils/                   # Standard Carbon Emissions Data
 │   ├── hooks/                   # Custom React hooks
-│   ├── lib/                    # Shared utilities
-│   ├── types/                  # TypeScript type definitions
 │   ├── globals.css             # Global styles
 │   ├── layout.jsx             # Root layout
+│   ├── loading.jsx             # Loading component
 │   └── page.jsx               # Main application
 ├── components/                  # Shared components
+│   ├── ui/                      # Reusable UI components
+│   ├── theme-provider.tsx       # Next.js Theme provider
+│   └── video-modal.tsx          
+├── hooks/                     # Custom React hooks
+├── lib/                     # Shared utilities
 ├── public/                     # Static assets
+├── types/                     # TypeScript type definitions
 ├── styles/                     # Additional styles
 ├── vercel.json                 # Vercel deployment configuration
 ├── next.config.mjs             # Next.js configuration
