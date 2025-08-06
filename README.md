@@ -182,6 +182,7 @@ ecopulse/
 │   ├── components/              # React components (TSX/JSX)
 │   │   ├── shared/                 
 │   │   ├── favicon.ico         # Favicon
+│   │   ├── carbon-calculator.jsx # Carbon Calculator
 │   │   ├── education.tsx      # Learning resources and content
 │   │   ├── environmental-quiz.tsx # Interactive quiz
 │   │   └── community-features.tsx # Community components
