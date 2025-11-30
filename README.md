@@ -307,7 +307,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Contributors
 
-- [Sravya](https://github.com/flurry101)
+- [flurry101](https://github.com/flurry101)
 
 ---
 
