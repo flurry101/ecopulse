@@ -20,7 +20,7 @@ jobs:
 
       - name: Add contributor to README
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
           USERNAME: ${{ github.actor }}
         run: |
           #!/bin/bash
